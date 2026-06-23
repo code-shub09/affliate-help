@@ -3,7 +3,7 @@ import dashboardImg from "../images/dashboardSnap2.png";
 import { BookOpen, Code2, BarChart3 } from "lucide-react";
 export default function PartnerHero() {
   return (
-    <section className="h-[calc(100vh-80px)] overflow-hidden">
+    <section className="h-[40vh] md:h-[40vh] lg:h-[calc(100vh-80px)] overflow-hidden">
       <div className="relative h-full">
         {/* Background Image */}
         <img
@@ -11,32 +11,31 @@ export default function PartnerHero() {
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
-
         {/* Left Gradient + Blur */}
+        {/* Background Blur Layer */}
         <div
           className="
-            absolute
-            inset-y-0
-            left-0
-            w-[35%]
-            bg-gradient-to-r
-            from-white
-            via-white/95
-            via-white/80
-            to-transparent
-            backdrop-blur-sm
-          "
+    absolute
+    left-[-20%]
+    top-1/2
+    -translate-y-1/2
+    w-[50%]
+    h-[150%]
+    rounded-full
+    bg-white
+    opacity-90
+    blur-[180px]
+  "
         />
+        {/* Gradient Layer */}
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-[1400px] mx-auto h-full px-4 sm:px-6 lg:px-10">
-          <div className="flex flex-col lg:flex-row h-full">
+        <div className="relative z-10  mx-auto h-[90%] px-4 sm:px-6 lg:px-10">
+          <div className="flex flex-col md:flex-row h-full">
             {/* Left Content */}
             <div
               className="
-        w-full
-        lg:w-[42%]
-        xl:w-[38%]
+       flex-1
         flex
         flex-col
         justify-center
@@ -49,7 +48,7 @@ export default function PartnerHero() {
                 PARTNER RESOURCE HUB
               </p>
 
-              <h1 className="mt-4 text-3xl sm:text-4xl xl:text-5xl font-bold leading-tight text-slate-900">
+              <h1 className="mt-4 text-3xl sm:text-2xl xl:text-4xl font-bold leading-tight text-slate-900">
                 Everything You Need To
                 <span className="block text-blue-600">Start And Grow</span>
                 As A Partner
@@ -76,79 +75,88 @@ export default function PartnerHero() {
             <div
               className="
         w-full
-        lg:w-[48%]
-        xl:w-[53%]
+        flex-[2]
         relative
-        flex
-        items-center
-        justify-center
-        mt-10
-        lg:mt-0
+        flex h-[92%]
+        items-center pt-4
+        justify-end gap-6
+       
+        lg:mt-0  p
       "
             >
               {/* Dashboard */}
-              <img
-                src={dashboardImg}
-                alt=""
-                className="
-          w-[280px]
-          sm:w-[360px]
-          md:w-[460px]
-          lg:w-[450px]
-          xl:w-[530px]
+              <div className="h-full  relative">
+                <img
+                  src={dashboardImg}
+                  alt=""
+                  className="
+         w-auto
+
+         md:h-[60%] lg:h-[94%] object-contain
+        
           rounded-xl
           shadow-2xl
           z-20
         "
-              />
+                />
+                <div className="w-30 h-18 bg-blue-800 absolute flex flex-col text-xs justify-around items-center text-white rounded-lg -right-15 bottom-4 z-50 ">
+                  <span>Top Performer</span>
+                  <span>
+                    <strong>+96%</strong> this month
+                  </span>
+                  <span>over last 30 days</span>
+                </div>
+              </div>
 
               {/* Desktop Cards */}
               <div
                 className="
           hidden
-          lg:flex
+          lg:flex 
           flex-col
           gap-5
-          absolute
-          right-0
-          top-1/2
-          -translate-y-1/2
+         
+        
           z-30
         "
               >
                 {/* Card 1 */}
-                <div className="bg-white rounded-2xl shadow-xl px-3 py-4 w-[200px] flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center">
-                    <BookOpen className="w-6 h-6 text-green-600" />
+                <div className="bg-white rounded-2xl shadow-xl px-3 py-4 w-[170px] flex items-center gap-4">
+                  <div className="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center">
+                    <BookOpen className="w-4 h-4 text-green-600" />
                   </div>
 
                   <div>
-                    <h4 className="font-semibold">How-To Guides</h4>
-                    <p className="text-sm text-slate-500">Start learning</p>
+                    <h4 className="text-xs lg:text-sm font-semibold">
+                      How-To Guides
+                    </h4>
+                    <p className="text-[10px] lg:text-xs text-slate-500">
+                      Start learning
+                    </p>
                   </div>
                 </div>
 
                 {/* Card 2 */}
-                <div className="bg-white rounded-2xl shadow-xl px-3 py-4 w-[200px] flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center">
-                    <Code2 className="w-6 h-6 text-purple-600" />
+                <div className="bg-white rounded-2xl shadow-xl px-3 py-4 w-[170px] flex items-center gap-4">
+                  <div className="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center">
+                    <Code2 className="w-4 h-4 text-purple-600" />
                   </div>
 
                   <div>
-                    <h4 className="font-semibold">Widget Setup</h4>
-                    <p className="text-sm text-slate-500">Get started</p>
+                    <h4 className="text-sm font-semibold">Widget Setup</h4>
+                    <p className="text-xs text-slate-500">Get started</p>
                   </div>
                 </div>
 
                 {/* Card 3 */}
-                <div className="bg-white rounded-2xl shadow-xl px-3 py-4 w-[220px] flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center">
-                    <BarChart3 className="w-6 h-6 text-amber-600" />
+                <div className="bg-white rounded-2xl shadow-xl px-3 py-4 w-[170px] flex items-center gap-4">
+                  <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center">
+                    <BarChart3 className="w-4 h-4 text-amber-600" />
                   </div>
 
                   <div>
-                    <h4 className="font-semibold">Reporting</h4>
-                    <p className="text-sm text-slate-500">Explained</p>
+                    <h4 className="text-sm font-semibold">Reporting</h4>
+                    <p className="text-xs text-slate-500">Explained</p>
                   </div>
                 </div>
               </div>
@@ -171,7 +179,7 @@ export default function PartnerHero() {
           </div>
 
           {/* Bottom Strip */}
-          <div
+          {/* <div
             className="
       mt-10
       lg:absolute
@@ -230,7 +238,7 @@ export default function PartnerHero() {
                 <p className="text-sm text-slate-500">Satisfaction</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
